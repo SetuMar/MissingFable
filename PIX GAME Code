@@ -1,0 +1,89 @@
+import pygame, sys, random
+
+pygame.init()
+#initiates pygame module
+clock=pygame.time.Clock()
+
+screen_width=400
+screen_height=400
+#window dimensions
+
+screen=pygame.display.set_mode((screen_width, screen_height))
+#create the window
+
+pygame.display.set_caption('pix game')
+#name the game Window
+
+#game variables
+bg_colour=pygame.Color(0, 0, 255)
+
+player_move_speed=0
+player_move_down=0
+gravity=0.25
+player_colour=pygame.Color(255, 255, 255)
+
+bounce=pygame.Rect(screen_width/2-5, 350, 20, 20)
+
+orb_surface=pygame.image.load('orb proper.png').convert()
+orb_surface=pygame.transform.scale2x(orb_surface)
+orb_rect=orb_surface.get_rect(center=(screen_height/2, 300))
+
+player_surface=pygame.image.load('player.png').convert()
+player_surface=pygame.transform.scale2x(player_surface)
+player_rect=player_surface.get_rect(center=(screen_height/2, screen_width/2))
+
+while True:
+    #while loop that detects if user has pressed key
+    for event in pygame.event.get():
+        #we get all possible user inputs
+        if event.type==pygame.QUIT:
+            #if the input is QUIT (close window) button
+            pygame.quit()
+            #uninitializes pygame module
+            sys.exit()
+            #actually closes the window
+
+        if event.type == pygame.KEYDOWN:
+            # checks if ANY KEY has been pressed
+            if event.key == pygame.K_LEFT:
+                # checks if UP ARROW has been pressed
+                player_move_speed = 0
+                player_move_speed -= 4
+                print(player_move_speed)
+            if event.key == pygame.K_RIGHT:
+                # checks if UP ARROW has been pressed
+                player_move_speed = 0
+                player_move_speed += 4
+
+        if event.type == pygame.KEYUP:
+            # checks if ANY KEY has been pressed
+            if event.key == pygame.K_LEFT:
+                # checks if UP ARROW has been pressed
+                player_move_speed = 0
+            if event.key == pygame.K_RIGHT:
+                # checks if UP ARROW has been pressed
+                player_move_speed = 0
+
+    if player_rect.colliderect(orb_rect):
+        player_move_down=0
+        player_move_down-=8
+        random_number=random.randint(1, 2)
+
+        if random_number==1:
+            orb_rect.x=random.randint(100, 320)-70
+
+        if random_number==2:
+            orb_rect.x=random.randint(10, 320)+70
+
+    player_rect.x += player_move_speed
+    player_move_down+=gravity
+    player_rect.centery+=player_move_down
+
+    screen.fill(bg_colour)
+    screen.blit(player_surface, player_rect)
+    screen.blit(orb_surface, orb_rect)
+
+    pygame.display.flip()
+    #this draws visuals
+    clock.tick(60)
+    #how much are we updating the code-we control the speed of updates
