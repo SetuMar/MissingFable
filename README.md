@@ -1,7 +1,6 @@
-- 👋 Hi, I’m @MissingFable
-- 👀 I’m interested in code...and sleep
-- 🌱 I’m currently learning Python and Unity
-- 💞️ I’m looking to collaborate on ...
+- 👋 Hi, I’m @Solvent
+- 👀 I’m interested in web development at the moment.
+- 🌱 I’m currently learning HTML, JavaScript, and CSS.
 - 📫 How to reach me setu.marathe@gmail.com
 
 <!---
