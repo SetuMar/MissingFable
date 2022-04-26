@@ -1,6 +1,6 @@
 - 👋 Hi, I’m @Solvent
-- 👀 I’m interested in web development at the moment.
-- 🌱 I’m currently learning HTML, JavaScript, and CSS.
+- 👀 I’m interested in Python.
+- 🌱 I’m currently learning Pygame, BeautifulSoup, Pandas, and MatPlotLib
 - 📫 How to reach me setu.marathe@gmail.com
 
 <!---
