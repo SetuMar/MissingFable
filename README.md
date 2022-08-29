@@ -1,6 +1,6 @@
 - 👋 Hi, I’m @Solvent
 - 👀 I’m interested in Python.
-- 🌱 I’m currently learning Pygame, BeautifulSoup, Pandas, and MatPlotLib
+- 🌱 I’m currently learning Pygame, Pandas, and MatPlotLib
 - 📫 How to reach me setu.marathe@gmail.com
 
 <!---
